@@ -1,0 +1,355 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(60deg, rgb(146, 70, 218) 50%, rgb(11, 144, 221) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 15%;
+    width: 500px;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+}
+
+.content h1 {
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+form input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background: #fff;
+    margin-top: 15px;
+}
+
+form button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background: #fff;
+    color: rgb(159, 161, 22);
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0.7;
+    transition: all 0.5s ease;
+    margin-top: 15px;
+}
+
+form button:hover {
+    background: rgb(14, 124, 214);
+    color: wheat;
+}
+
+form button.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* styling of #todo_list */
+
+#todo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 18%;
+}
+
+#todo_list
+/* UL */
+
+{
+    min-width: 30%;
+    list-style: none;
+    overflow: hidden;
+}
+
+.todo {
+    margin: 0.5rem;
+    background: #fff;
+    color: #000;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 1s ease;
+}
+
+.todo li {
+    flex: 2;
+}
+
+.done_btn,
+.delete_btn {
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    background: #c40ee9;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.delete_btn:hover {
+    background-color: rgb(211, 33, 33);
+    color: rgb(255, 255, 255);
+}
+
+.done_btn:hover {
+    background-color: rgb(94, 219, 37);
+    color: rgb(255, 255, 255);
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
+}
+
+.todo_items {
+    padding: 0rem 0.7rem;
+}
+
+.dlt_anime
+/* delete animation */
+
+{
+    opacity: 0;
+    animation: deleted-item 1s cubic-bezier(0.55, -0.04, 0.9, 0.94) forwards;
+    transform-origin: 0% 100%;
+}
+
+@keyframes deleted-item {
+    /* 0% {
+        opacity: 1;
+        transform: rotateZ(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(90deg);
+    } */
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    30% {
+        opacity: 1;
+        transform: translateX(50px);
+    }
+    80% {
+        opacity: 1;
+        transform: translateX(-800px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-800px);
+    }
+}
+
+
+/* completed tasks */
+
+.completed_tasks {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+
+/* media queries */
+
+@media (max-width: 1475px) {
+    #todo_container {
+        margin-top: 22%;
+    }
+}
+
+@media (max-width: 1200px) {
+    #todo_container {
+        margin-top: 28%;
+    }
+}
+
+@media (max-width: 960px) {
+    #todo_container {
+        margin-top: 34%;
+    }
+}
+
+@media (max-width: 760px) {
+    #todo_container {
+        margin-top: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    #todo_container {
+        margin-top: 46%;
+    }
+    .content {
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    #todo_container {
+        margin-top: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    #todo_container {
+        margin-top: 63%;
+    }
+    .content {
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    #todo_container {
+        margin-top: 75%;
+    }
+}
+
+@media (max-width: 300px) {
+    #todo_container {
+        margin-top: 75%;
+    }
+}
+
+@media (max-height: 600px) {
+    .content {
+        margin-top: 10%;
+    }
+}
+
+
+/* footer */
+
+.footer #button {
+    width: 35px;
+    height: 35px;
+    border: #727172 12px solid;
+    border-radius: 35px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer #button:hover {
+    width: 35px;
+    height: 35px;
+    border: #3A3A3A 12px solid;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 2em;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 999;
+}
+
+.footer:hover {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    height: 10em;
+}
+
+.footer #container {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #3A3A3A;
+}
+
+.footer #cont {
+    position: relative;
+    top: -45px;
+    right: 190px;
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.footer_center {
+    width: 500px;
+    float: left;
+    text-align: center;
+}
+
+.footer h3 {
+    font-family: 'Helvetica';
+    color: #cccaca;
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 70px;
+    margin-left: 40px;
+}

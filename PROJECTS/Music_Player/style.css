@@ -1,0 +1,337 @@
+/* markup css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    font-family: 'Sansita Swashed', cursive;
+}
+
+.music {
+    text-align: center;
+    width: 30rem;
+    height: 50rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5rem;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgba(255, 255, 255, 0.5);
+    padding: 3rem;
+}
+
+.main-div {
+    width: 100vw;
+    height: 100vh;
+    /* animation: slide 3s ease-in-out infinite alternate; */
+    /* background-image: linear-gradient(to right, rgb(61, 207, 255), rgb(221, 112, 130)); */
+    display: grid;
+    place-items: center;
+    /* background: linear-gradient(to right, rgb(93, 202, 238) 50%, rgb(245, 134, 152));
+    background-size: 400% 400%;
+    animation: backAnime 5s ease infinite; */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: backAnime 10s ease infinite;
+}
+
+@keyframes backAnime {
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
+    /* from {
+        filter: hue-rotate(0);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    } */
+}
+
+
+/* Music container css */
+
+.music #title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    color: #171717;
+    margin: 2rem 0 0.5rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.music #artist {
+    text-transform: capitalize;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+    color: #4e4949;
+}
+
+
+/* volume up/down css */
+
+#volume-container {
+    position: relative;
+    width: 100%;
+    height: 15px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.3rem;
+}
+
+#volume-container i {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.slider {
+    width: 120px;
+    height: 0.2rem !important;
+    border-radius: 2rem;
+    background-color: #fff;
+    z-index: 100;
+    outline: none;
+    position: relative;
+}
+
+
+/* song img css */
+
+.songImg {
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    margin-top: 1.5rem;
+}
+
+.songImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0.5rem 1.2rem 3rem 0.5rem rgba(16, 166, 185, 0.6);
+    transition: transform 0.5s ease;
+}
+
+.songImg img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Shuffle and mute css */
+
+.random {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.1rem;
+    cursor: pointer;
+}
+
+
+/* Music control css */
+
+.music-controls {
+    width: 20rem;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.music-controls .fa {
+    color: #111;
+    font-size: 2rem;
+    cursor: pointer;
+    /* on transparent images or svg we can't use box-shadow */
+    filter: drop-shadow(0 1.2rem 3rem 0.5rem rgba(0, 0, 0, 0.4));
+}
+
+.music-controls .main-button {
+    width: 5rem;
+    height: 5rem;
+    background-color: #111;
+    border-radius: 50%;
+    color: #f6f6f6;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-controls .fa:hover {
+    color: grey;
+    transition: 0.2s;
+}
+
+.music-controls .fa-play:hover {
+    background-color: #f6f6f6;
+    color: #111;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+.music-controls .fa-pause:hover {
+    background-color: #f6f6f6;
+    color: #111;
+    transition: 0.3s;
+    box-shadow: 0 1rem 2rem 0.2rem rgba(0, 0, 0, 0.4);
+}
+
+
+/* anime class to rotate img we'll add it dynamically */
+
+.anime {
+    animation: rotatePlayer 4s linear infinite;
+}
+
+@keyframes rotatePlayer {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* progress bar css */
+
+.progressbar-container {
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+    margin-top: 1rem;
+}
+
+.progress-div {
+    width: 100%;
+    height: 0.5rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 4rem;
+    position: relative;
+    margin-top: 0.5rem;
+    transition: all 1s linear;
+    appearance: none;
+    cursor: pointer;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 0; progress bars width we will change is dynamically bt comparing with currenTime & durtion of song */
+    height: 100%;
+    background-color: lightseagreen;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 4rem;
+    transition: width 0.3s linear;
+    appearance: none;
+    cursor: pointer;
+}
+
+.progress-duration-meter {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+}
+
+
+/* footer */
+
+.footer #button {
+    width: 35px;
+    height: 35px;
+    border: #727172 12px solid;
+    border-radius: 35px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer #button:hover {
+    width: 35px;
+    height: 35px;
+    border: #3A3A3A 12px solid;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 2em;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 999;
+}
+
+.footer:hover {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    height: 10em;
+}
+
+.footer #container {
+    margin-top: 5px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: #3A3A3A;
+}
+
+.footer #cont {
+    position: relative;
+    top: -45px;
+    right: 190px;
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.footer_center {
+    width: 500px;
+    float: left;
+    text-align: center;
+}
+
+.footer h3 {
+    font-family: 'Helvetica';
+    color: #cccaca;
+    font-size: 30px;
+    font-weight: 100;
+    margin-top: 70px;
+    margin-left: 40px;
+}

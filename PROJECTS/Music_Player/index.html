@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Modern Music Player | Web based music player</title>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="music">
+            <h2 id="title">Popsicle</h2>
+            <!-- Song name -->
+            <h3 id="artist">pop</h3>
+            <!-- Artist Name -->
+
+            <div id="volume-container">
+                <i class="fa fa-volume-down" id="volume-down"></i>
+                <input type="range" class="slider" id="volumeSlider" min="0" max="100" value="100" step="1">
+                <i class="fa fa-volume-up" id="volume-up"></i>
+            </div>
+
+
+            <div class="songImg">
+                <img src="images/head.jpeg" id="song-img">
+            </div>
+            <audio src="music/popsicle.mp3"></audio>
+
+            <div class="random">
+                <!-- Shuffle -->
+                <i class="fa fa-random" id="shuffle"></i>
+                <!-- mute -->
+                <i class="fa fa-volume-up" id="mute"></i>
+            </div>
+            <!-- Progress bar -->
+            <div class="progressbar-container" id="progress-container">
+                <div class="progress-duration-meter">
+                    <div id="current-time">00:00</div>
+                    <!-- initial songs start time -->
+                    <div id="duration">4:25</div>
+                    <!-- first songs lenght -->
+                </div>
+            </div>
+            <div class="progress-div" id="progress-div">
+                <div class="progress" id="progress"></div>
+            </div>
+
+            <!-- Music COntrols -->
+            <div class="music-controls">
+                <i class="fa fa-backward" id="prev" title="previous"></i>
+                <i class="fa fa-play main-button" id="play-pause" title="play"></i>
+                <i class="fa fa-forward" id="next" title="next"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div id="button"></div>
+        <div id="container">
+            <div id="cont">
+                <div class="footer_center">
+                    <h3>Shivanand Mitkar</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script src="main.js"></script>
